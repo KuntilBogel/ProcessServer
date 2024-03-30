@@ -6,7 +6,7 @@ RUN apt-get update -y && apt-get upgrade -y && apt-get install -y lsb-release &&
 
 RUN echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/cloudflared.list
 
-RUN apt-get install cloudflared -y 
+RUN apt-get update && apt-get install cloudflared -y 
 
 RUN rm -rf /var/lib/apt/lists/* 
 
