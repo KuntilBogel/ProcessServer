@@ -12,7 +12,8 @@ RUN rm -rf /var/lib/apt/lists/*
 
 RUN cd /run/secrets && ls
 
-RUN cloudflared service install $(cat /run/secrets/cloudflared_key)
+RUN --mount=type=secret,id=cloudflared_key,mode=0444,required=true \
+    cloudflared service install $(cat /run/secrets/cloudflared_key)
 
 WORKDIR /app
 
