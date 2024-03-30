@@ -2,7 +2,9 @@ FROM node:latest
 
 RUN mkdir -p --mode=0755 /usr/share/keyrings && curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
 
-RUN echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
+RUN yum
+
+RUN echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/cloudflared.list
 
 RUN apt-get update -y && apt-get upgrade -y && apt-get install -y && apt-get install ffmpeg -y && apt-get install cloudflared -y && rm -rf /var/lib/apt/lists/* 
 
