@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install cloudflared -y
 
 RUN rm -rf /var/lib/apt/lists/* 
 
-RUN cd /run/secrtets && ls
+RUN cd /run/secrets && ls
 
 RUN cloudflared service install $(cat /run/secrets/cloudflared_key)
 
