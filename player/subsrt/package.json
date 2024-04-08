@@ -1,0 +1,33 @@
+{
+  "name": "subsrt",
+  "description": "Subtitle converter",
+  "version": "1.1.1",
+  "author": "Papn Kukn",
+  "license": "MIT",
+  "main": "lib/subsrt.js",
+  "type": "module",
+  "bin": {
+    "subsrt": "bin/subsrt.js"
+  },
+  "scripts": {
+    "test": "nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/papnkukn/subsrt"
+  },
+  "bugs": {
+    "url": "https://github.com/papnkukn/subsrt/issues"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "gulp": "^5.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "subsrt": "^1.1.1"
+  }
+}

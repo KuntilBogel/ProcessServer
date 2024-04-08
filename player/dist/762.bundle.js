@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmyLibrary=self.webpackChunkmyLibrary||[]).push([[762],{762:(n,r,t)=>{t.r(r),t.d(r,{default:()=>e});const e={name:"json",detect:function(n){if("string"==typeof n&&/^\[[\s\r\n]*\{[\s\S]*\}[\s\r\n]*\]$/g.test(n))return"json"},parse:function(n,r){return JSON.parse(n)},build:function(n,r){return JSON.stringify(n," ",2)}}}}]);
