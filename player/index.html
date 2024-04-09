@@ -8,6 +8,8 @@
   <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.4.6/plyr.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/js-alert/dist/jsalert.min.js"></script>
+
   <script src="./dist/bundle.js" ></script>
 </head>
 
@@ -31,80 +33,8 @@
       <button type="button" class="btn js-stop">Stop</button>
       <button type="button" class="btn js-rewind">Rewind</button>
       <button type="button" class="btn js-forward">Forward</button>
+      <button type="button" class="btn js-delplayback">Delete saved playback</button>
     </div>
   </div>
 </body>
-<!-- <script>
-  // document.querySelector("#main_vid_dl").href = params.get("videolink")
-  const params = new URLSearchParams(window.location.search)
-  let subtitle = params.get("subtitlelink"),
-      main_sub = document.querySelector("#main_sub")
-  if(subtitle) {
-    // const subtitleext = subtitle.includes(".srt") ? "srt" : (subtitle.includes(".ass") ? "ass" : null);
-  document.querySelector("#main_vid").src = params.get("videolink");
-  fetch(subtitle).then(async p => {
-    const resp = await p.text()
-    let ha = ""
-    // document.querySelector("#main_sub").src = URL.createObjectURL(new Blob([webvtt_subtitler(subtitleext, resp)], { type: 'text/vtt' }));
-  })
-  }else{
-    main_sub.remove()
-  }
-  
-
-  const player = new Plyr('#player');
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    window.player = player;
-
-    // Bind event listener
-    function on(selector, type, callback) {
-      document.querySelector(selector).addEventListener(type, callback, false);
-    }
-
-    // Play
-    on('.js-play', 'click', () => {
-      player.play();
-    });
-
-    // Pause
-    on('.js-pause', 'click', () => {
-      player.pause();
-    });
-
-    // Stop
-    on('.js-stop', 'click', () => {
-      player.stop();
-    });
-
-    // Rewind
-    on('.js-rewind', 'click', () => {
-      player.rewind();
-    });
-
-    // Forward
-    on('.js-forward', 'click', () => {
-      player.forward();
-    });
-  });
-
-  player.on('playing', (event) => {
-    const storedTime = localStorage.getItem('plyr-saved-time');
-    if (storedTime && storedTime > 1 && storedTime != player.currentTime) {
-      player.currentTime = Number(storedTime);
-    }
-  })
-
-  player.on('ended', () => {
-    localStorage.removeItem('plyr-saved-time');
-  });
-
-  player.on('timeupdate', (event) => {
-    if (player.currentTime != 0) {
-      localStorage.setItem('plyr-saved-time', player.currentTime);
-    }
-  })
-</script> -->
-
 </html>
